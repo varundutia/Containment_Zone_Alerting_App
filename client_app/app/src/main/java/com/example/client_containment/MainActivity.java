@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 }).check();
 
     }
-
     private void updateLocation() {
         buildLocationRequest();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
@@ -80,13 +79,11 @@ public class MainActivity extends AppCompatActivity {
         }
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, getPendingIntent());
     }
-
     private PendingIntent getPendingIntent() {
         Intent intent = new Intent(this, MyLocationService.class);
         intent.setAction(MyLocationService.ACTION_PROCESS_UPDATE);
         return PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
     }
-
     private void buildLocationRequest(){
         locationRequest = new LocationRequest();
         locationRequest .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);

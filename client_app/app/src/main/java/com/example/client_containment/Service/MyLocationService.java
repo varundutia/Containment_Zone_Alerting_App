@@ -101,7 +101,6 @@ public class MyLocationService extends BroadcastReceiver {
         Log.d("lllist",locationList.toString());
         queue.add(jsonObjReq);
     }
-
     private void postDataUsingVolley(String lat,String lon,Context context) {
         final RequestQueue queue = Volley.newRequestQueue(context);
         String url = "http://172.23.176.1:5000/post_user_location_data";

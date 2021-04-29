@@ -318,7 +318,7 @@ def send_trigger():
             )
             mysql.connection.commit()
 
-        # send_mail(email)
+        send_mail(email)
         return {"response": "success"}
 
 
