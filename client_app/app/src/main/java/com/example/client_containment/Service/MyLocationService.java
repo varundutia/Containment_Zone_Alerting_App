@@ -64,7 +64,7 @@ public class MyLocationService extends BroadcastReceiver {
         ArrayList<Location> locationList = new ArrayList<>();
         final RequestQueue queue = Volley.newRequestQueue(context);
         RequestFuture<JSONArray> requestFuture= RequestFuture.newFuture();
-        String url = "http://172.23.176.1:5000/location_data";
+        String url = "https://admin-containment.herokuapp.com/location_data";
         JsonArrayRequest jsonObjReq = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -103,7 +103,7 @@ public class MyLocationService extends BroadcastReceiver {
     }
     private void postDataUsingVolley(String lat,String lon,Context context) {
         final RequestQueue queue = Volley.newRequestQueue(context);
-        String url = "http://172.23.176.1:5000/post_user_location_data";
+        String url = "https://admin-containment.herokuapp.com/post_user_location_data";
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_data", 0);
         int id = sharedPreferences.getInt("id",0);
         JSONObject postparams = new JSONObject();
@@ -135,7 +135,7 @@ public class MyLocationService extends BroadcastReceiver {
     }
     private void sendMailUsingVolley(Context context,int locationId) {
         final RequestQueue queue = Volley.newRequestQueue(context);
-        String url = "http://172.23.176.1:5000/send_trigger";
+        String url = "https://admin-containment.herokuapp.com/send_trigger";
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_data", 0);
         String email = sharedPreferences.getString("email","null");
         JSONObject postparams = new JSONObject();

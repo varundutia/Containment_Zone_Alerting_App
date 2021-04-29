@@ -41,6 +41,12 @@ public class SignUp extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         sharedpreferences = getApplicationContext().getSharedPreferences("user_data", 0);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+        editor.putString("latitudeVisited", "0");
+        editor.putString("longitudeVisited", "0");
+
+        editor.commit();
 
         if(sharedpreferences.getAll().size() >= 3){
             Intent intent = new Intent(this,MainActivity.class);
@@ -56,7 +62,7 @@ public class SignUp extends AppCompatActivity {
     }
     private void postDataUsingVolley(String name, String email,String password) {
         final RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.1.17:5000/android_sign_up";
+        String url = "https://admin-containment.herokuapp.com/android_sign_up";
 
         JSONObject postparams = new JSONObject();
         try {
