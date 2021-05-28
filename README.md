@@ -1,4 +1,4 @@
-# SPS-10480-Containment-zone-Alerting-App
+#Containment-zone-Alerting-App
 Containment zone Alerting App
 
 Cliemt app developed in Java (Android)
