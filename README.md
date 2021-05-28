@@ -1,7 +1,7 @@
 #Containment-zone-Alerting-App
 
 
-Cliemt app developed in Java (Android)
+Client app developed in Java (Android)
 Admin app developed in python (flask)
 
 To get the client APK run the code on your local android studio and generate the APK file.
